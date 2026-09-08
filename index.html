@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktiver Statistikkurs für naturwissenschaftliche Forschungsprojekte am Gymnasium">
+  <title>Statistik-Kurs NWW an der KSK</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#course">Zum Kurs springen</a>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">Σ</span>
+      <div><strong>Statistik-Kurs NWW</strong><span>an der KSK</span></div>
+    </div>
+    <div class="progress-wrap" aria-label="Kursfortschritt">
+      <span id="progressLabel">0 von 6 Laboren</span>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="course-nav" aria-label="Kurskapitel">
+      <p class="nav-label">Dein Lernweg</p>
+      <button class="nav-item active" data-target="start"><span>Start</span><small>Überblick</small></button>
+      <button class="nav-item" data-target="labor1"><span>1 · Datenarten</span><small>Was liegt vor?</small></button>
+      <button class="nav-item" data-target="labor2"><span>2 · Typische Werte</span><small>Was ist typisch?</small></button>
+      <button class="nav-item" data-target="labor3"><span>3 · Streuung</span><small>Wie verschieden?</small></button>
+      <button class="nav-item" data-target="labor4"><span>4 · Verteilung</span><small>Welche Form?</small></button>
+      <button class="nav-item" data-target="labor5"><span>5 · Signifikanz</span><small>Zufall oder Unterschied?</small></button>
+      <button class="nav-item" data-target="labor6"><span>6 · Auswertung</span><small>Test wählen</small></button>
+      <button class="nav-item project-link" data-target="projekt"><span>Eigenes Projekt</span><small>Optional bearbeiten</small></button>
+    </nav>
+
+    <main id="course" class="course-main" tabindex="-1">
+      <section id="start" class="chapter active" aria-labelledby="start-title">
+        <div class="chapter-kicker">Start</div>
+        <h1 id="start-title">Statistik-Kurs NWW an der KSK</h1>
+        <p class="lead">Von Rohdaten zu einer begründeten Aussage: Du lernst Statistik an Seifen, Cremes und Messreihen. Eigene Daten brauchst du noch nicht. Wenn dein Forschungsprojekt bereit ist, kannst du es am Ende direkt einbauen.</p>
+
+        <div class="path-choice" role="group" aria-label="Arbeitsweg wählen">
+          <button class="path-card selected" data-path="examples">
+            <span class="path-number">A</span>
+            <strong>Mit Beispieldaten lernen</strong>
+            <span>Der ganze Kurs funktioniert sofort.</span>
+          </button>
+          <button class="path-card" data-path="own">
+            <span class="path-number">B</span>
+            <strong>Eigenes Projekt mitführen</strong>
+            <span>Übertrage jeden Schritt zusätzlich auf deine Forschung.</span>
+          </button>
+        </div>
+
+        <div class="route-map" aria-label="Kursablauf">
+          <div><b>1</b><span>Einordnen</span></div><i></i>
+          <div><b>2–3</b><span>Beschreiben</span></div><i></i>
+          <div><b>4</b><span>Prüfen</span></div><i></i>
+          <div><b>5–6</b><span>Vergleichen</span></div>
+        </div>
+
+        <aside class="note blue"><strong>Für die Forschungswoche</strong> Plane die Auswertung möglichst vor dem Experiment. Dann weisst du, welche Daten und wie viele Wiederholungen du brauchst.</aside>
+        <button class="primary next" data-next="labor1">Kurs beginnen</button>
+      </section>
+
+      <section id="labor1" class="chapter" aria-labelledby="l1-title">
+        <div class="chapter-kicker">Labor 1 · etwa 35 Minuten</div>
+        <h2 id="l1-title">Welche Art von Daten habe ich?</h2>
+        <p class="lead">Daten sind Antworten auf eine Forschungsfrage. Deshalb kann derselbe Gegenstand ganz unterschiedliche Daten liefern.</p>
+
+        <div class="soap-lab">
+          <div class="soap-title"><span>Ein Gegenstand – drei Datenarten</span><h3>Das Seifen-Beispiel</h3><p>Vier Seifen werden untersucht. Entscheidend ist nicht die Seife, sondern was genau gefragt und erfasst wird.</p></div>
+          <div class="soap-questions">
+            <article><span class="concept-tag nominal">Nominal</span><b>Welche Seife gefällt am besten?</b><p>Jede Person nennt eine Seife. Danach werden die Stimmen pro Seife gezählt. Die Sorten sind Kategorien ohne natürliche Reihenfolge – deshalb sind die Daten nominal.</p></article>
+            <article><span class="concept-tag ordinal">Ordinal</span><b>Bringe die Seifen in eine Rangfolge.</b><p>Welche gefällt am besten, zweitbesten, drittbesten? Die Reihenfolge ist klar, die Abstände zwischen den Rängen sind aber nicht messbar.</p></article>
+            <article><span class="concept-tag metric">Metrisch</span><b>Wie hoch ist der Schaum nach 30 Sekunden?</b><p>Die Schaumhöhe wird in Millimetern gemessen. Differenzen lassen sich sinnvoll berechnen.</p></article>
+          </div>
+        </div>
+
+        <div class="concept-grid three">
+          <article><span class="concept-tag nominal">Nominal</span><h3>Kategorien</h3><p>Keine natürliche Reihenfolge.</p><em>Blutgruppe, Farbe, Tierart</em></article>
+          <article><span class="concept-tag ordinal">Ordinal</span><h3>Rangfolge</h3><p>Eine Reihenfolge ist möglich, gleiche Abstände sind aber nicht sicher.</p><em>Schulnoten, Bewertung 1–9</em></article>
+          <article><span class="concept-tag metric">Metrisch</span><h3>Messbare Abstände</h3><p>Differenzen zwischen Werten haben eine klare Bedeutung.</p><em>Temperatur, Länge, Zeit</em></article>
+        </div>
+
+        <aside class="note blue"><strong>Warum sind Schulnoten ordinal?</strong> Eine 5 ist besser als eine 4 und eine 4 besser als eine 3. Die Reihenfolge ist klar. Aber der Leistungsunterschied zwischen 3 und 4 muss nicht gleich gross sein wie zwischen 5 und 6. Auch „Note 6 ist doppelt so gut wie Note 3“ wäre unsinnig. Deshalb sind Schulnoten keine metrischen Messwerte.</aside>
+
+        <div class="exercise" data-exercise="scale">
+          <div class="exercise-head"><div><span>Übung 1</span><h3>Daten-Sortierstation</h3></div><span id="scaleScore" class="score">0 / 8</span></div>
+          <p>Wähle für jede Variable die passende Datenart.</p>
+          <div id="scaleCards" class="quiz-list"></div>
+          <div id="scaleFeedback" class="feedback" aria-live="polite"></div>
+        </div>
+
+        <aside class="note amber"><strong>Achtung bei Zahlen:</strong> Eine Zahl ist nicht automatisch metrisch. Eine Bewertung von 1 bis 9 besitzt eine Reihenfolge, aber der Abstand zwischen 2 und 3 muss sich nicht genauso anfühlen wie zwischen 7 und 8.</aside>
+
+        <div class="project-prompt own-only"><strong>Übertrage es:</strong> Welche abhängige Variable erhebt ihr? Ordne sie nominal, ordinal oder metrisch ein.</div>
+        <div class="chapter-actions"><button class="complete-btn" data-complete="labor1">Labor 1 abschliessen</button><button class="secondary next" data-next="labor2">Weiter</button></div>
+      </section>
+
+      <section id="labor2" class="chapter" aria-labelledby="l2-title">
+        <div class="chapter-kicker">Labor 2 · etwa 40 Minuten</div>
+        <h2 id="l2-title">Welcher Wert ist typisch?</h2>
+        <p class="lead">Zuerst schauen wir, wie sich Werte verteilen. Danach wählen wir einen passenden Wert für ihre Mitte.</p>
+
+        <div class="plain-explainer distribution-intro">
+          <h3>Was bedeutet Verteilung?</h3>
+          <p>Eine Verteilung zeigt, welche Werte vorkommen und wie häufig sie vorkommen. Wenn 20 Personen eine Creme von 1 bis 9 bewerten, können viele Bewertungen bei 6 liegen, wenige bei 1 oder 9 und manche Werte gar nicht vorkommen.</p>
+          <p>Ein Häufigkeitsdiagramm macht diese Verteilung sichtbar. Ihre Form kann gleichmässig, einseitig, zweigipflig oder ungefähr glockenförmig sein. Eine zweigipflige Verteilung nennt man auch <b>bimodal</b>. Den Begriff <b>schief</b> verwenden wir, wenn sich die Werte deutlich stärker zu einer Seite ausdehnen.</p>
+        </div>
+
+        <div class="measure-table" role="table" aria-label="Lagemasse im Vergleich">
+          <div class="table-row table-head" role="row"><span>Kennwert</span><span>Sinnvoll für</span><span>Bedeutung</span></div>
+          <div class="table-row" role="row"><b>Modalwert</b><span>nominal, ordinal, metrisch</span><span>häufigster Wert</span></div>
+          <div class="table-row" role="row"><b>Median</b><span>ordinal, metrisch</span><span>teilt geordnete Daten in zwei Hälften</span></div>
+          <div class="table-row" role="row"><b>Mittelwert</b><span>metrisch</span><span>Summe aller Werte geteilt durch ihre Anzahl</span></div>
+        </div>
+
+        <div class="exercise cream-mode-lab">
+          <div class="exercise-head"><div><span>Beispiel aus deiner Excel-Tabelle</span><h3>Wo liegt der Modalwert?</h3></div></div>
+          <p>Wähle eine Creme. Die Balken zeigen, wie oft jede Bewertung von 1 bis 9 vorkommt.</p>
+          <div id="creamButtons" class="choice-row">
+            <button class="active" data-cream="0">Creme 1</button><button data-cream="1">Creme 2</button><button data-cream="2">Creme 3</button><button data-cream="3">Creme 4</button>
+          </div>
+          <div id="creamModePlot" class="frequency-plot" aria-label="Häufigkeiten der Cremebewertungen"></div>
+          <div id="creamModeResult" class="feedback visible"></div>
+        </div>
+
+        <div class="exercise lab-bench">
+          <div class="exercise-head"><div><span>Experiment</span><h3>Der Ausreisser-Regler</h3></div></div>
+          <p>Fünf Keimlinge wachsen ähnlich. Verändere den sechsten Messwert.</p>
+          <label for="outlierRange">Wachstum des sechsten Keimlings: <output id="outlierValue">12</output> mm</label>
+          <input id="outlierRange" type="range" min="8" max="50" value="12" step="1">
+          <div id="outlierPlot" class="dotplot" aria-label="Messwerte als Punkte"></div>
+          <div class="dotplot-axis"><span>5 mm</span><span>Messwert: Wachstum jedes Keimlings</span><span>50 mm</span></div>
+          <p id="outlierValues" class="measurement-list"></p>
+          <div class="result-pair three"><div><span>Modalwert</span><strong id="modeValue">–</strong></div><div><span>Median</span><strong id="medianValue">–</strong></div><div><span>Mittelwert</span><strong id="meanValue">–</strong></div></div>
+          <p id="outlierInsight" class="feedback visible"></p>
+        </div>
+
+        <div class="quick-check" data-correct="median">
+          <h3>Kurze Entscheidung</h3><p>Eine Geschmacksbewertung liegt meist bei 7. Einige wenige Personen vergeben 1. Welcher Kennwert beschreibt die Mitte meist besser als der Mittelwert?</p>
+          <div class="choice-row"><button data-answer="mode">Modalwert</button><button data-answer="median">Median</button><button data-answer="mean">Mittelwert</button></div>
+          <div class="feedback" aria-live="polite"></div>
+        </div>
+
+        <aside class="note blue"><strong>Korrigierte Regel:</strong> Ein Mittelwert kann für metrische Daten immer berechnet werden. Bei stark schiefen Daten oder Ausreissern beschreibt der Median die typische Lage häufig besser. Normalverteilung ist keine Voraussetzung für das reine Berechnen des Mittelwerts.</aside>
+        <div class="chapter-actions"><button class="complete-btn" data-complete="labor2">Labor 2 abschliessen</button><button class="secondary next" data-next="labor3">Weiter</button></div>
+      </section>
+
+      <section id="labor3" class="chapter" aria-labelledby="l3-title">
+        <div class="chapter-kicker">Labor 3 · etwa 40 Minuten</div>
+        <h2 id="l3-title">Wie stark streuen die Werte?</h2>
+        <p class="lead">Ein typischer Wert genügt nicht. Zwei Gruppen können denselben Mittelwert besitzen und trotzdem völlig verschieden sein.</p>
+
+        <div class="spread-compare">
+          <article><h3>Messreihe A</h3><div class="number-strip"><span>4,8</span><span>4,9</span><span>5,0</span><span>5,1</span><span>5,2</span></div><p>Mittelwert: <b>5,0</b> · kleine Streuung</p></article>
+          <article><h3>Messreihe B</h3><div class="number-strip wide"><span>1</span><span>3</span><span>5</span><span>7</span><span>9</span></div><p>Mittelwert: <b>5,0</b> · grosse Streuung</p></article>
+        </div>
+
+        <div class="concept-grid three compact">
+          <article><h3>Spannweite</h3><p>Maximum minus Minimum. Einfach, aber empfindlich gegenüber Ausreissern.</p></article>
+          <article><h3>Varianz</h3><p>Mittlere quadrierte Abweichung der Werte vom Mittelwert. Grosse Abstände zählen dadurch besonders stark.</p></article>
+          <article><h3>Standardabweichung</h3><p>Wurzel der Varianz. Sie beschreibt die Streuung wieder in derselben Einheit wie die Messwerte.</p></article>
+        </div>
+
+        <div class="variance-flow" aria-label="Berechnung der Varianz">
+          <div><b>1</b><span>Mittelwert berechnen</span></div><i>→</i><div><b>2</b><span>Abweichungen vom Mittelwert</span></div><i>→</i><div><b>3</b><span>Abweichungen quadrieren</span></div><i>→</i><div><b>4</b><span>mitteln = Varianz</span></div><i>→</i><div><b>5</b><span>Wurzel ziehen =<br>Standardabweichung</span></div>
+        </div>
+        <aside class="note blue"><strong>Excel:</strong> Für eine Stichprobe verwendet Excel <b>VAR.S</b> und <b>STABW.S</b>. Dabei wird durch n − 1 statt durch n geteilt. Die Standardabweichung ist also direkt die Wurzel der Varianz.</aside>
+
+        <div class="excel-example">
+          <div class="exercise-head"><div><span>Konkrete Werte aus der Creme-Tabelle</span><h3>Gleiche Skala – sehr verschiedene Streuung</h3></div></div>
+          <div class="excel-grid table-head"><span></span><span>Mittelwert</span><span>Varianz VAR.S</span><span>Standardabw. STABW.S</span></div>
+          <div class="excel-grid"><b>Creme 1</b><span>5,35</span><span>4,77</span><span>2,18</span></div>
+          <div class="excel-grid"><b>Creme 2</b><span>4,50</span><span>8,89</span><span>2,98</span></div>
+          <div class="excel-grid"><b>Creme 3</b><span>6,10</span><span>4,09</span><span>2,02</span></div>
+          <div class="excel-grid"><b>Creme 4</b><span>2,35</span><span>0,77</span><span>0,88</span></div>
+          <p>Creme 2 streut am stärksten, Creme 4 am wenigsten. Da Bewertungen von 1 bis 9 ordinal sind, sind Median und Häufigkeiten für die eigentliche Aussage wichtiger. Die berechneten Werte helfen hier, Varianz und Standardabweichung zu verstehen.</p>
+        </div>
+
+        <div class="exercise precision-game">
+          <div class="exercise-head"><div><span>Übung 2</span><h3>Richtig oder präzise?</h3></div></div>
+          <div class="target-grid">
+            <button data-pattern="fu"><span class="target fu"></span><b>Fall A</b></button>
+            <button data-pattern="rp"><span class="target rp"></span><b>Fall B</b></button>
+            <button data-pattern="ru"><span class="target ru"></span><b>Fall C</b></button>
+            <button data-pattern="fp"><span class="target fp"></span><b>Fall D</b></button>
+          </div>
+          <p>Wähle ein Zielbild und ordne es ein:</p>
+          <div class="choice-row" id="precisionChoices"><button data-answer="fp">falsch, präzise</button><button data-answer="ru">richtig, unpräzise</button><button data-answer="fu">falsch, unpräzise</button><button data-answer="rp">richtig und präzise</button></div>
+          <div id="precisionFeedback" class="feedback" aria-live="polite">Wähle zuerst einen Fall.</div>
+        </div>
+
+        <aside class="note amber"><strong>Keine starre Mindestzahl:</strong> Eine Standardabweichung lässt sich auch bei kleinen Stichproben berechnen. Dann ist sie aber unsicher. Mehr unabhängige Messungen machen die Schätzung verlässlicher.</aside>
+        <div class="project-prompt own-only"><strong>Übertrage es:</strong> Entsteht die Streuung eher durch Messfehler, natürliche biologische Vielfalt oder beides?</div>
+        <div class="chapter-actions"><button class="complete-btn" data-complete="labor3">Labor 3 abschliessen</button><button class="secondary next" data-next="labor4">Weiter</button></div>
+      </section>
+
+      <section id="labor4" class="chapter" aria-labelledby="l4-title">
+        <div class="chapter-kicker">Labor 4 · etwa 30 Minuten</div>
+        <h2 id="l4-title">Warum prüfen wir die Verteilung?</h2>
+        <p class="lead">Manche statistischen Tests rechnen mit einem Modell: Viele Werte liegen nahe am Mittelwert, sehr kleine und sehr grosse Werte sind selten. Diese Form heisst Normalverteilung.</p>
+
+        <div class="why-normal">
+          <article><h3>Wenn es ungefähr passt</h3><p>Bei metrischen Daten können Mittelwert, Standardabweichung und ein t-Test sinnvoll zusammen verwendet werden.</p></article>
+          <article><h3>Wenn es deutlich nicht passt</h3><p>Einzelne Werte können den Mittelwert stark beeinflussen. Dann passen oft Median und ein Rangtest wie Mann-Whitney oder Wilcoxon besser.</p></article>
+        </div>
+
+        <div class="shape-guide">
+          <article><b>Einseitig schief</b><p>Viele Werte liegen auf einer Seite, einige wenige ziehen sich wie ein langer „Schwanz“ nach links oder rechts. Mittelwert und Ausreisser reagieren darauf stärker.</p></article>
+          <article><b>Zweigipflig oder bimodal</b><p>Zwei Häufigkeitsgipfel können auf zwei unterschiedliche Teilgruppen oder Bedingungen hinweisen. Eine einzige Glockenkurve beschreibt die Daten dann schlecht. <b>Nicht verwechseln:</b> Binomial ist der Name einer Wahrscheinlichkeitsverteilung, zum Beispiel für die Trefferzahl bei mehreren Ja-Nein-Versuchen.</p></article>
+        </div>
+
+        <div class="normal-steps">
+          <div><b>1</b><span><strong>Nur metrische Daten</strong>Bei nominalen oder ordinalen Daten ist dieser Schritt nicht nötig.</span></div>
+          <div><b>2</b><span><strong>Bild ansehen</strong>Ist die Verteilung ungefähr symmetrisch und ohne auffällige Ausreisser?</span></div>
+          <div><b>3</b><span><strong>Erst jetzt rechnerisch prüfen</strong>Ein Normalverteilungstest kann die optische Beurteilung ergänzen. Bei kleinen Stichproben bleibt das Ergebnis unsicher.</span></div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-head"><div><span>Übung 3</span><h3>Verteilungs-Detektiv</h3></div><span id="normalScore" class="score">0 / 3</span></div>
+          <div id="distributionCases" class="distribution-grid"></div>
+          <div id="normalFeedback" class="feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="plain-explainer">
+          <h3>Der Shapiro-Wilk-Test – erst nach dem Anschauen</h3>
+          <p>Die Nullhypothese H₀ lautet hier: „Die metrischen Daten könnten aus einer Normalverteilung stammen.“ Der <b>p-Wert</b> zeigt, wie ungewöhnlich die beobachtete Verteilung unter dieser Annahme wäre.</p>
+          <p>Vorher wird eine Grenze festgelegt, meistens <b>α = 0,05</b>. Liegt p darunter, ist die Abweichung zu auffällig und H₀ wird verworfen.</p>
+          <p><b>p &lt; 0,05:</b> deutlicher Hinweis gegen eine Normalverteilung.<br><b>p ≥ 0,05:</b> keine deutliche Abweichung gefunden – aber kein Beweis für Normalverteilung.</p>
+          <p><b>Bei gepaarten Messungen:</b> Prüfe die Differenzen, zum Beispiel „nachher minus vorher“.</p>
+        </div>
+
+        <div class="excel-example normal-example">
+          <div class="exercise-head"><div><span>Die 20 Werte aus der Excel-Tabelle</span><h3>Konkrete p-Werte vergleichen</h3></div></div>
+          <div class="normal-number-grid">
+            <article><b>Creme 1</b><span>p = 0,275</span><em>p ≥ 0,05: H₀ nicht verwerfen</em></article>
+            <article><b>Creme 2</b><span>p = 0,0049</span><em>p &lt; 0,05: gegen Normalverteilung</em></article>
+            <article><b>Creme 3</b><span>p = 0,071</span><em>p ≥ 0,05: H₀ nicht verwerfen</em></article>
+            <article><b>Creme 4</b><span>p = 0,018</span><em>p &lt; 0,05: gegen Normalverteilung</em></article>
+          </div>
+          <p>Diese Berechnung zeigt die Logik des Tests. Für die wirkliche Testwahl bleiben die Cremebewertungen jedoch <b>ordinal</b>. Deshalb ist ein Rangtest geeigneter – unabhängig davon, wie der Normalverteilungstest ausfällt.</p>
+        </div>
+
+        <aside class="note blue"><strong>Merksatz:</strong> Verteilung ansehen, mögliche Ausreisser prüfen und den Test als zusätzlichen Hinweis nutzen. Kein einzelnes Ergebnis entscheidet alles.</aside>
+        <div class="chapter-actions"><button class="complete-btn" data-complete="labor4">Labor 4 abschliessen</button><button class="secondary next" data-next="labor5">Weiter</button></div>
+      </section>
+
+      <section id="labor5" class="chapter" aria-labelledby="l5-title">
+        <div class="chapter-kicker">Labor 5 · etwa 45 Minuten</div>
+        <h2 id="l5-title">Ist der Unterschied mehr als Zufall?</h2>
+        <p class="lead">Zwei Gruppen unterscheiden sich statistisch signifikant, wenn ihr beobachteter Unterschied mit grosser Wahrscheinlichkeit nicht nur durch Zufall entstanden ist.</p>
+
+        <div class="significance-explainer">
+          <h3>Wovon hängt das ab?</h3>
+          <div><span><b>Grösse des Unterschieds</b>Wie weit liegen die Gruppen auseinander?</span><span><b>Streuung</b>Wie stark unterscheiden sich die Einzelwerte innerhalb der Gruppen?</span><span><b>Stichprobengrösse n</b>Wie viele unabhängige Beobachtungen liegen vor?</span></div>
+          <p>Ein grosser Unterschied, eine kleine Streuung und eine ausreichend grosse Stichprobe sprechen eher gegen eine rein zufällige Abweichung.</p>
+        </div>
+
+        <div class="design-basics">
+          <h3>Welche Messwerte gehören zusammen?</h3>
+          <p>Diese Entscheidung wird erst jetzt wichtig, weil sie bestimmt, welcher Signifikanztest passt.</p>
+          <div>
+            <article><b>Stichprobengrösse n</b><p>n zählt die unabhängigen Untersuchungseinheiten – zum Beispiel Personen oder Keimlinge. Mehrfachmessungen derselben Person erhöhen n nicht automatisch.</p></article>
+            <article><b>Unabhängige Gruppen</b><p>20 Personen bewerten nur Creme 1, andere 20 nur Creme 4: n₁ = 20 und n₂ = 20. Für ordinale Werte passt etwa der Mann-Whitney-U-Test.</p></article>
+            <article><b>Gepaarte Messungen</b><p>Dieselben 20 Personen bewerten Creme 1 und Creme 4. Jeder Wert hat einen Partner; es gibt n = 20 Paare. Für ordinale Werte passt der Wilcoxon-Test.</p></article>
+          </div>
+        </div>
+
+        <div class="hypothesis-pair">
+          <div><span>H₀ · Nullhypothese</span><strong>Kein Unterschied</strong><p>Die beobachtete Abweichung entstand durch Zufall.</p></div>
+          <div><span>H₁ · Alternativhypothese</span><strong>Ein Unterschied</strong><p>Die Daten sprechen gegen die Nullhypothese.</p></div>
+        </div>
+
+        <aside class="note blue"><strong>α, Konfidenzniveau und Konfidenzintervall</strong> α ist das vorher festgelegte <b>Signifikanzniveau</b>, also das erlaubte Risiko für einen Fehlalarm. α = 0,05 entspricht einem <b>Konfidenzniveau von 95 %</b> (1 − α). Ein <b>95-%-Konfidenzintervall</b> ist dagegen ein berechneter Wertebereich für den unbekannten Effekt. Enthält das Intervall für einen Unterschied die 0 nicht, entspricht dies bei einem passenden zweiseitigen Test gewöhnlich p &lt; 0,05.</aside>
+
+        <div class="p-scale" aria-label="p-Wert-Skala">
+          <div class="p-marker" style="left:5%"><span>0,05</span></div>
+          <div class="p-zone significant">H₀ verwerfen</div><div class="p-zone open">H₀ nicht verwerfen</div>
+        </div>
+        <p class="center-copy">Wenn vorher α = 0,05 festgelegt wurde, gilt ein Ergebnis mit p &lt; 0,05 als statistisch signifikant.</p>
+
+        <div class="excel-example significance-numbers">
+          <div class="exercise-head"><div><span>Vergleiche aus der Excel-Tabelle</span><h3>Unterschied, Streuung und p-Wert zusammen lesen</h3></div></div>
+          <div class="comparison-row"><b>Creme 1 gegen Creme 2</b><span>Median 6 gegen 3,5</span><span>p = 0,461</span><em>nicht signifikant</em></div>
+          <div class="comparison-row"><b>Creme 1 gegen Creme 4</b><span>Median 6 gegen 2</span><span>p &lt; 0,001</span><em class="sig">signifikant</em></div>
+          <div class="comparison-row"><b>Creme 2 gegen Creme 4</b><span>Median 3,5 gegen 2</span><span>p = 0,074</span><em>nicht signifikant</em></div>
+          <div class="comparison-row"><b>Creme 3 gegen Creme 4</b><span>Median 7 gegen 2</span><span>p &lt; 0,001</span><em class="sig">signifikant</em></div>
+          <p>Diese Werte gelten für den Mann-Whitney-U-Test, also für <b>unabhängige Gruppen</b>. Wenn dieselben Personen alle Cremes bewertet haben, sind die Werte gepaart und der Wilcoxon-Test ist richtig. Die Untersuchungsanlage entscheidet also mit.</p>
+        </div>
+
+        <div class="exercise errorbar-lab">
+          <div class="exercise-head"><div><span>Optische Abschätzung</span><h3>Überlappen sich die Standardabweichungsbalken?</h3></div></div>
+          <div id="errorbarChart" class="errorbar-chart" aria-label="Zwei Mittelwerte mit Standardabweichungsbalken">
+            <div class="chart-axis"><span>10</span><span>5</span><span>0</span></div>
+            <div class="bar-group"><div id="errorA" class="error-line"></div><div id="barA" class="mean-bar"><span>A</span></div></div>
+            <div class="bar-group"><div id="errorB" class="error-line"></div><div id="barB" class="mean-bar orange"><span>B</span></div></div>
+          </div>
+          <label for="distanceRange">Abstand der Mittelwerte verändern</label>
+          <input id="distanceRange" type="range" min="0" max="5" value="4" step="0.2">
+          <div id="overlapResult" class="feedback visible"></div>
+        </div>
+
+        <div class="rule-grid">
+          <article class="good"><b>Keine Überlappung</b><p>Ein deutlicher Unterschied ist plausibel. Ein Test sollte die Aussage trotzdem prüfen.</p></article>
+          <article><b>Überlappung</b><p>Der Unterschied kann trotzdem signifikant sein. Aus dem Bild allein folgt nicht „kein Unterschied“.</p></article>
+        </div>
+        <aside class="note amber"><strong>Wichtig:</strong> Standardabweichungsbalken zeigen die Streuung der Einzelwerte, nicht direkt die Unsicherheit des Mittelwerts. Die optische Prüfung ist nur eine grobe Vorabschätzung. Stichprobengrösse und Testverfahren fehlen im Bild.</aside>
+
+        <div class="quick-check" data-correct="not-reject">
+          <h3>Kurze Entscheidung</h3><p>Ein Test ergibt p = 0,18. Welche Aussage ist korrekt?</p>
+          <div class="choice-stack"><button data-answer="equal">Die Gruppen sind bewiesen gleich.</button><button data-answer="not-reject">H₀ kann nicht verworfen werden.</button><button data-answer="h1">H₁ ist zu 82 % wahr.</button></div>
+          <div class="feedback" aria-live="polite"></div>
+        </div>
+
+        <aside class="note blue"><strong>Signifikant ist nicht automatisch wichtig:</strong> Berichte auch Mittelwerte oder Mediane, Streuung, Stichprobengrösse und die tatsächliche Grösse des Unterschieds.</aside>
+        <div class="chapter-actions"><button class="complete-btn" data-complete="labor5">Labor 5 abschliessen</button><button class="secondary next" data-next="labor6">Weiter</button></div>
+      </section>
+
+      <section id="labor6" class="chapter" aria-labelledby="l6-title">
+        <div class="chapter-kicker">Labor 6 · etwa 45 Minuten</div>
+        <h2 id="l6-title">Welcher Test passt?</h2>
+        <p class="lead">Gehe immer in derselben Reihenfolge vor: Frage → Datenart → Untersuchungsanlage → Verteilung → Test.</p>
+
+        <div class="test-finder exercise">
+          <div class="exercise-head"><div><span>Interaktiver Testfinder</span><h3>Baue deine Untersuchung zusammen</h3></div></div>
+          <div class="finder-grid">
+            <label>Datenart<select id="finderScale"><option value="metric">metrisch</option><option value="ordinal">ordinal</option><option value="nominal">nominal</option></select></label>
+            <label>Anzahl Gruppen<select id="finderGroups"><option value="2">zwei</option><option value="3">mehr als zwei</option></select></label>
+            <label>Beziehung<select id="finderRelation"><option value="independent">unabhängig</option><option value="paired">gepaart</option></select></label>
+            <label id="distributionLabel">Verteilung<select id="finderDistribution"><option value="normal">ungefähr normalverteilt</option><option value="non-normal">nicht normal / unsicher</option></select></label>
+          </div>
+          <div class="finder-result"><span>Passender Test</span><strong id="finderResult">Welch-t-Test</strong><p id="finderReason"></p></div>
+        </div>
+
+        <div class="test-map">
+          <h3>Die wichtigsten Wege</h3>
+          <div class="test-row"><span class="concept-tag nominal">Nominal</span><p>Häufigkeiten vergleichen oder Zusammenhang prüfen</p><b>Chi-Quadrat-Test<br><small>bei kleinen Häufigkeiten: Fisher-Test</small></b></div>
+          <div class="test-row"><span class="concept-tag ordinal">Ordinal</span><p>zwei unabhängige Gruppen</p><b>Mann-Whitney-U-Test</b></div>
+          <div class="test-row"><span class="concept-tag ordinal">Ordinal</span><p>zwei gepaarte Messungen</p><b>Wilcoxon-Vorzeichen-Rang-Test</b></div>
+          <div class="test-row"><span class="concept-tag metric">Metrisch</span><p>zwei unabhängige, ungefähr normale Gruppen</p><b>Welch-t-Test</b></div>
+          <div class="test-row"><span class="concept-tag metric">Metrisch</span><p>zwei gepaarte Messungen; Differenzen ungefähr normal</p><b>gepaarter t-Test</b></div>
+        </div>
+
+        <div class="exercise final-case">
+          <div class="exercise-head"><div><span>Generalprobe</span><h3>Vier Cremes im Vergleich</h3></div></div>
+          <p>20 Personen bewerten jede Creme von 1 bis 9. Creme 1 hat einen Median von 6, Creme 4 einen Median von 2. Die Verteilungen sind nicht normal.</p>
+          <div class="case-steps">
+            <label>1. Datenart<select data-case="scale"><option value="">Wählen …</option><option value="nominal">nominal</option><option value="ordinal">ordinal</option><option value="metric">metrisch</option></select></label>
+            <label>2. Beziehung<select data-case="relation"><option value="">Wählen …</option><option value="independent">unabhängig</option><option value="paired">gepaart</option></select></label>
+            <label>3. Passender Test<select data-case="test"><option value="">Wählen …</option><option value="mw">Mann-Whitney-U-Test</option><option value="wilcoxon">Wilcoxon-Vorzeichen-Rang-Test</option><option value="ttest">Welch-t-Test</option><option value="chi">Chi-Quadrat-Test</option></select></label>
+          </div>
+          <button id="checkCase" class="primary">Auswertung prüfen</button>
+          <div id="caseFeedback" class="feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="chapter-actions"><button class="complete-btn" data-complete="labor6">Labor 6 abschliessen</button><button class="primary next" data-next="projekt">Zum Abschluss</button></div>
+      </section>
+
+      <section id="projekt" class="chapter" aria-labelledby="project-title">
+        <div class="chapter-kicker">Abschluss · zwei mögliche Wege</div>
+        <h2 id="project-title">Jetzt wird es eure Forschung</h2>
+        <p class="lead">Du kannst diesen Bereich sofort mit einer Idee ausfüllen oder später mit den echten Daten zurückkehren. Deine Eingaben bleiben auf diesem Gerät gespeichert.</p>
+
+        <div class="completion-box" id="completionBox"><strong>Kursfortschritt</strong><span id="completionText">Schliesse die sechs Lernlabore ab.</span></div>
+
+        <div class="project-tabs" role="tablist" aria-label="Abschlussweg">
+          <button class="active" role="tab" aria-selected="true" data-project-tab="plan">Eigenes Projekt planen</button>
+          <button role="tab" aria-selected="false" data-project-tab="example">Mit Beispiel abschliessen</button>
+        </div>
+
+        <div id="projectPlan" class="project-panel active" role="tabpanel">
+          <form id="researchForm" class="research-form">
+            <label class="full">Unsere Forschungsfrage<textarea id="researchQuestion" rows="2" placeholder="Beispiel: Verändert mehrmaliges Färben die Reissfestigkeit von Haaren?"></textarea></label>
+            <label>Abhängige Variable<input id="dependentVariable" type="text" placeholder="z. B. Reisskraft in N"></label>
+            <label>Datenart<select id="projectScale"><option value="">Wählen …</option><option value="nominal">nominal</option><option value="ordinal">ordinal</option><option value="metric">metrisch</option></select></label>
+            <label>Gruppen<select id="projectGroups"><option value="2">zwei</option><option value="3">mehr als zwei</option></select></label>
+            <label>Messungen<select id="projectRelation"><option value="independent">unabhängig</option><option value="paired">gepaart / dieselben Proben</option></select></label>
+            <label>Verteilung<select id="projectDistribution"><option value="unknown">noch unbekannt</option><option value="normal">ungefähr normalverteilt</option><option value="non-normal">nicht normal / unsicher</option></select></label>
+            <label>Stichprobengrösse pro Gruppe<input id="sampleSize" type="number" min="1" placeholder="z. B. 20"></label>
+            <label class="full">Mögliche Fehler oder Grenzen<textarea id="limitations" rows="3" placeholder="z. B. unterschiedliche Haardicke, Messgerät, kleine Stichprobe"></textarea></label>
+          </form>
+          <details class="data-workbench">
+            <summary>Optional: eigene Zahlen aus Excel prüfen</summary>
+            <p>Kopiere zwei Zahlenspalten aus Excel hier hinein. Trenne Werte durch Zeilenumbrüche, Leerzeichen oder Semikolon. Die Daten verlassen dieses Gerät nicht.</p>
+            <div class="data-columns">
+              <label>Gruppe oder Messung A<textarea id="dataA" rows="6" placeholder="5,2&#10;4,9&#10;5,4"></textarea></label>
+              <label>Gruppe oder Messung B<textarea id="dataB" rows="6" placeholder="6,1&#10;5,8&#10;6,4"></textarea></label>
+            </div>
+            <button id="analyseData" class="secondary" type="button">Kennwerte berechnen</button>
+            <div id="dataSummary" class="data-summary" aria-live="polite"></div>
+          </details>
+          <div class="analysis-plan"><span>Vorgeschlagener Auswertungsweg</span><strong id="projectTest">Fülle zuerst die Datenart aus.</strong><p id="projectAdvice"></p></div>
+          <div class="form-actions"><button id="copyPlan" class="primary" type="button">Auswertungsplan kopieren</button><button id="clearPlan" class="secondary" type="button">Eingaben löschen</button></div>
+          <div id="copyFeedback" class="feedback" aria-live="polite"></div>
+        </div>
+
+        <div id="exampleFinish" class="project-panel" role="tabpanel">
+          <div class="example-report">
+            <h3>Beispiel einer vollständigen Ergebnisformulierung</h3>
+            <p><b>Fragestellung:</b> Werden Creme 1 und Creme 4 unterschiedlich bewertet?</p>
+            <p><b>Daten:</b> Ordinale Bewertungen von 1 bis 9; dieselben 20 Personen prüften beide Cremes.</p>
+            <p><b>Beschreibung:</b> Der Median betrug bei Creme 1 sechs Punkte und bei Creme 4 zwei Punkte.</p>
+            <p><b>Test:</b> Wegen der gepaarten ordinalen Daten wurde der Wilcoxon-Vorzeichen-Rang-Test verwendet.</p>
+            <p><b>Aussage:</b> Bei p &lt; 0,05 wird H₀ verworfen. Die Bewertungen unterscheiden sich statistisch signifikant. Für die praktische Bedeutung werden zusätzlich die Verteilungen und die Grösse des Unterschieds betrachtet.</p>
+          </div>
+          <button class="complete-btn" data-complete="example">Beispiel verstanden</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer><span>Statistik-Kurs NWW an der KSK</span><button id="resetCourse">Kursfortschritt zurücksetzen</button></footer>
+  <script src="app.js"></script>
+</body>
+</html>
