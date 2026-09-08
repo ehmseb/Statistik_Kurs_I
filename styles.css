@@ -59,6 +59,22 @@ h3 { margin: 0 0 .45rem; font-size: 1.15rem; }
 .route-map div { display: flex; flex-direction: column; align-items: center; gap: .3rem; font-size: .82rem; color: var(--muted); }
 .route-map b { display: grid; place-items: center; width: 46px; height: 46px; border: 2px solid #9dc8c5; border-radius: 50%; color: var(--teal); background: white; }
 .route-map i { height: 2px; background: #b8cfda; }
+.downloads-panel { display: grid; grid-template-columns: minmax(220px, .85fr) 1.55fr; gap: 1.4rem; margin: 2.2rem 0; padding: 1.35rem; border-radius: 1rem; color: white; background: linear-gradient(125deg, var(--navy), #16486a); box-shadow: var(--shadow); }
+.downloads-copy > span { color: #66d0c7; font-size: .76rem; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+.downloads-copy h2 { margin: .35rem 0 .55rem; color: white; font-size: 1.65rem; letter-spacing: -.02em; }
+.downloads-copy p { margin: 0; color: #c8dae5; font-size: .92rem; }
+.download-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+.download-card { display: flex; min-width: 0; flex-direction: column; padding: 1rem; border: 1px solid rgba(255,255,255,.18); border-radius: .7rem; color: var(--navy); background: white; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+.download-card:hover, .download-card:focus-visible { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(3,20,38,.25); }
+.download-card b { line-height: 1.25; }
+.download-card span { margin: .25rem 0 .85rem; color: var(--muted); font-size: .8rem; }
+.download-card strong { margin-top: auto; color: var(--blue); font-size: .84rem; }
+.downloads-reminder { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 2rem; padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: .65rem; background: white; }
+.downloads-reminder div:first-child { display: flex; flex-direction: column; }
+.downloads-reminder span { color: var(--muted); font-size: .9rem; }
+.downloads-reminder div:last-child { display: flex; flex-wrap: wrap; gap: .45rem; }
+.downloads-reminder a { padding: .5rem .7rem; border: 1px solid #9db0bf; border-radius: .45rem; color: var(--navy); background: #f5f8fa; font-weight: 750; text-decoration: none; }
+.downloads-reminder a:hover, .downloads-reminder a:focus-visible { border-color: var(--teal); color: var(--teal); background: #eef8f7; }
 .note { margin: 1.7rem 0; padding: 1rem 1.2rem; border-left: 4px solid; border-radius: .25rem .7rem .7rem .25rem; }
 .note strong { display: block; margin-bottom: .2rem; }
 .note.blue { background: #e7f2f7; border-color: var(--blue); }
@@ -275,6 +291,9 @@ footer button { border: 0; color: var(--blue); background: transparent; }
   .case-steps, .research-form { grid-template-columns: 1fr; }
   .data-columns, .data-summary { grid-template-columns: 1fr; }
   .research-form .full { grid-column: auto; }
+  .downloads-panel { grid-template-columns: 1fr; }
+  .download-grid { grid-template-columns: repeat(3, 1fr); }
+  .downloads-reminder { align-items: flex-start; flex-direction: column; }
 }
 @media (max-width: 590px) {
   .brand span:last-child, #progressLabel { display: none; }
@@ -282,6 +301,7 @@ footer button { border: 0; color: var(--blue); background: transparent; }
   .path-choice, .spread-compare, .hypothesis-pair, .rule-grid, .finder-grid, .why-normal, .significance-explainer > div { grid-template-columns: 1fr; }
   .route-map { grid-template-columns: repeat(4, 1fr); gap: .5rem; }
   .route-map i { display: none; }
+  .download-grid { grid-template-columns: 1fr; }
   .quiz-item { grid-template-columns: 1fr; }
   .table-row { grid-template-columns: 1fr; gap: .25rem; }
   .table-head { display: none; }
