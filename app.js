@@ -166,7 +166,9 @@ document.querySelectorAll(".quick-check").forEach(check => {
     button.classList.add(correct ? "correct" : "wrong");
     const feedback = check.querySelector(".feedback");
     feedback.className = `feedback visible ${correct ? "success" : "error"}`;
-    if (check.dataset.correct === "median") feedback.textContent = correct ? "Richtig. Der Median reagiert weniger stark auf Extremwerte." : "Versuche es nochmals: Gesucht ist ein Kennwert, der gegenüber Extremwerten robust ist.";
+    if (check.dataset.feedbackCorrect || check.dataset.feedbackWrong) {
+      feedback.textContent = correct ? check.dataset.feedbackCorrect : check.dataset.feedbackWrong;
+    } else if (check.dataset.correct === "median") feedback.textContent = correct ? "Richtig. Der Median reagiert weniger stark auf Extremwerte." : "Versuche es nochmals: Gesucht ist ein Kennwert, der gegenüber Extremwerten robust ist.";
     else feedback.textContent = correct ? "Richtig. Die Daten liefern nicht genug Grund, H₀ zu verwerfen. Gleichheit ist damit nicht bewiesen." : "Nicht korrekt. Ein p-Wert ist weder die Wahrscheinlichkeit für eine Hypothese noch ein Beweis für Gleichheit.";
   }));
 });
@@ -276,7 +278,7 @@ document.querySelectorAll("[data-project-tab]").forEach(button => button.addEven
   document.getElementById("exampleFinish").classList.toggle("active", button.dataset.projectTab === "example");
 }));
 
-const projectFields = ["researchQuestion", "dependentVariable", "projectScale", "projectGroups", "projectRelation", "projectDistribution", "sampleSize", "limitations", "dataA", "dataB"];
+const projectFields = ["researchQuestion", "dependentVariable", "projectScale", "projectGroups", "projectRelation", "projectDistribution", "sampleSize", "measurementMethod", "instrumentResolution", "errorControls", "limitations", "dataA", "dataB"];
 projectFields.forEach(id => {
   const field = document.getElementById(id);
   if (state.project[id] !== undefined) field.value = state.project[id];
@@ -325,6 +327,9 @@ function buildPlanText() {
     `Messungen: ${get("projectRelation")}`,
     `Verteilung: ${get("projectDistribution")}`,
     `Stichprobengrösse pro Gruppe: ${get("sampleSize")}`,
+    `Messgerät / Methode: ${get("measurementMethod")}`,
+    `Kleinste Einheit / Auflösung: ${get("instrumentResolution")}`,
+    `Kontrollen gegen Messfehler: ${get("errorControls")}`,
     `Vorgeschlagener Test: ${document.getElementById("projectTest").textContent}`,
     `Begründung: ${document.getElementById("projectAdvice").textContent}`,
     `Fehler und Grenzen: ${get("limitations")}`,

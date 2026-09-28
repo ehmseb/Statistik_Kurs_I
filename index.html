@@ -26,7 +26,7 @@
       <button class="nav-item active" data-target="start"><span>Start</span><small>Überblick</small></button>
       <button class="nav-item" data-target="labor1"><span>1 · Datenarten</span><small>Was liegt vor?</small></button>
       <button class="nav-item" data-target="labor2"><span>2 · Typische Werte</span><small>Was ist typisch?</small></button>
-      <button class="nav-item" data-target="labor3"><span>3 · Streuung</span><small>Wie verschieden?</small></button>
+      <button class="nav-item" data-target="labor3"><span>3 · Messen & Streuung</span><small>Wie zuverlässig?</small></button>
       <button class="nav-item" data-target="labor4"><span>4 · Verteilung</span><small>Welche Form?</small></button>
       <button class="nav-item" data-target="labor5"><span>5 · Signifikanz</span><small>Zufall oder Unterschied?</small></button>
       <button class="nav-item" data-target="labor6"><span>6 · Auswertung</span><small>Test wählen</small></button>
@@ -54,7 +54,7 @@
 
         <div class="route-map" aria-label="Kursablauf">
           <div><b>1</b><span>Einordnen</span></div><i></i>
-          <div><b>2–3</b><span>Beschreiben</span></div><i></i>
+          <div><b>2–3</b><span>Beschreiben & messen</span></div><i></i>
           <div><b>4</b><span>Prüfen</span></div><i></i>
           <div><b>5–6</b><span>Vergleichen</span></div>
         </div>
@@ -162,9 +162,9 @@
       </section>
 
       <section id="labor3" class="chapter" aria-labelledby="l3-title">
-        <div class="chapter-kicker">Labor 3 · etwa 40 Minuten</div>
-        <h2 id="l3-title">Wie stark streuen die Werte?</h2>
-        <p class="lead">Ein typischer Wert genügt nicht. Zwei Gruppen können denselben Mittelwert besitzen und trotzdem völlig verschieden sein.</p>
+        <div class="chapter-kicker">Labor 3 · etwa 55 Minuten</div>
+        <h2 id="l3-title">Wie stark streuen die Werte – und wie zuverlässig messen wir?</h2>
+        <p class="lead">Ein typischer Wert genügt nicht. Zwei Messreihen können denselben Mittelwert besitzen und trotzdem verschieden streuen. Zusätzlich müssen wir verstehen, wodurch Messwerte vom gesuchten Wert abweichen können.</p>
 
         <div class="spread-compare">
           <article><h3>Messreihe A</h3><div class="number-strip"><span>4,8</span><span>4,9</span><span>5,0</span><span>5,1</span><span>5,2</span></div><p>Mittelwert: <b>5,0</b> · kleine Streuung</p></article>
@@ -192,6 +192,33 @@
           <p>Creme 2 streut am stärksten, Creme 4 am wenigsten. Da Bewertungen von 1 bis 9 ordinal sind, sind Median und Häufigkeiten für die eigentliche Aussage wichtiger. Die berechneten Werte helfen hier, Varianz und Standardabweichung zu verstehen.</p>
         </div>
 
+        <div class="measurement-section">
+          <div class="section-heading"><span>Messen und Fehler</span><h3>Drei Fehlerarten – drei unterschiedliche Folgen</h3><p>Ein Messwert ist eine Annäherung. Abweichungen können verschiedene Ursachen haben; deshalb werden sie auch verschieden behandelt.</p></div>
+          <div class="error-type-grid">
+            <article class="random-error"><span>Typ 1</span><h3>Zufällige Einflüsse</h3><p>Sie ändern Richtung und Grösse, etwa Windzug beim Wägen oder leicht unterschiedliches Ablesen.</p><b>Folge: grössere Streuung, geringere Präzision</b></article>
+            <article class="systematic-error"><span>Typ 2</span><h3>Systematische Einflüsse</h3><p>Sie verschieben Messwerte wiederholt in dieselbe Richtung, etwa ein falsch kalibriertes Gerät.</p><b>Folge: geringere Richtigkeit</b></article>
+            <article class="gross-error"><span>Typ 3</span><h3>Grobe Fehler</h3><p>Zum Beispiel Zahlendreher, falsche Einheit oder vertauschte Probe. Solche Werte können als Ausreisser auffallen.</p><b>Folge: Ursache prüfen und Vorgehen dokumentieren</b></article>
+          </div>
+        </div>
+
+        <aside class="note amber"><strong>Ausreisser nicht einfach löschen:</strong> Prüfe zuerst Protokoll, Einheit, Gerät und Versuchsablauf. Ein nachweislicher Übertragungs- oder Bedienfehler kann nach einer vorher festgelegten Regel ausgeschlossen werden. Ein ungewöhnlicher, aber korrekt gemessener Wert gehört dagegen zu den Daten.</aside>
+
+        <div class="repeat-measurements">
+          <h3>Warum mehrfach messen?</h3>
+          <div>
+            <article><b>Zufällige Einflüsse erkennen</b><p>Wiederholungen zeigen, wie stark die Messwerte streuen. Der Mittelwert wird mit mehr unabhängigen Wiederholungen stabiler.</p></article>
+            <article><b>Grobe Fehler entdecken</b><p>Auffällige Werte werden sichtbar und können anhand des Protokolls untersucht werden.</p></article>
+            <article><b>Systematische Einflüsse bleiben</b><p>Viele Wiederholungen beheben keinen Nullpunktfehler. Dafür braucht es Kontrollen, Referenzen oder Kalibrierung.</p></article>
+          </div>
+        </div>
+
+        <div class="quality-compare">
+          <article><span>Richtigkeit</span><h3>Wie nahe liegt die Messreihe am Referenzwert?</h3><p>Verglichen wird meist der Mittelwert mit einem bekannten oder akzeptierten Referenzwert. Systematische Einflüsse verschlechtern die Richtigkeit.</p></article>
+          <article><span>Präzision</span><h3>Wie eng liegen Wiederholungsmessungen zusammen?</h3><p>Eine kleine Standardabweichung bedeutet hohe Präzision. Präzise Messwerte können trotzdem alle neben dem Referenzwert liegen.</p></article>
+        </div>
+
+        <aside class="note blue"><strong>Merke:</strong> Richtigkeit und Präzision sind unabhängig voneinander. Einen Mittelwert darf man für metrische Daten auch ohne Normalverteilung berechnen; ob er die Daten gut beschreibt, beurteilt man zusätzlich anhand von Verteilung und Ausreissern.</aside>
+
         <div class="exercise precision-game">
           <div class="exercise-head"><div><span>Übung 2</span><h3>Richtig oder präzise?</h3></div></div>
           <div class="target-grid">
@@ -205,8 +232,29 @@
           <div id="precisionFeedback" class="feedback" aria-live="polite">Wähle zuerst einen Fall.</div>
         </div>
 
-        <aside class="note amber"><strong>Keine starre Mindestzahl:</strong> Eine Standardabweichung lässt sich auch bei kleinen Stichproben berechnen. Dann ist sie aber unsicher. Mehr unabhängige Messungen machen die Schätzung verlässlicher.</aside>
-        <div class="project-prompt own-only"><strong>Übertrage es:</strong> Entsteht die Streuung eher durch Messfehler, natürliche biologische Vielfalt oder beides?</div>
+        <div class="measurement-section rounding-section">
+          <div class="section-heading"><span>Messwerte angeben</span><h3>Auflösung, Nachkommastellen und Runden</h3><p>Ein Ergebnis darf keine feinere Auflösung vortäuschen, als das Messgerät liefert. Die kleinste ablesbare Einheit bestimmt, welche Stellen sinnvoll sind.</p></div>
+          <div class="instrument-table" role="table" aria-label="Messgeräte und sinnvolle Wertangaben">
+            <div class="instrument-row instrument-head" role="row"><span>Messgerät</span><span>Kleinste Einheit</span><span>Sinnvolle Angabe</span><span>Unpassend</span></div>
+            <div class="instrument-row" role="row"><b>Lineal mit mm-Teilung</b><span>1 mm = 0,1 cm</span><span>5,3 cm</span><span>5,30 cm</span></div>
+            <div class="instrument-row" role="row"><b>Messzylinder</b><span>1 ml</span><span>23 ml</span><span>23,0 ml</span></div>
+            <div class="instrument-row" role="row"><b>Messzylinder</b><span>0,1 ml</span><span>23,4 ml</span><span>23 ml</span></div>
+            <div class="instrument-row" role="row"><b>Digitalwaage</b><span>0,01 g</span><span>12,45 g</span><span>12,4 g</span></div>
+          </div>
+          <div class="rounding-rules">
+            <article><h3>Runden</h3><p>Die erste weggelassene Ziffer entscheidet: 0–4 abrunden, 5–9 aufrunden.</p><p><b>3,746 → 3,75</b> · <b>3,742 → 3,74</b> · <b>2,995 → 3,00</b></p></article>
+            <article><h3>Rechnen mit Messwerten</h3><p>Runde erst das Endergebnis. Bei Addition und Subtraktion richtet sich die letzte Stelle nach der ungenauesten Dezimalstelle; bei Multiplikation und Division nach der kleinsten Zahl signifikanter Ziffern.</p></article>
+          </div>
+        </div>
+
+        <div class="quick-check" data-correct="balance" data-feedback-correct="Richtig. Die Waage löst Hundertstelgramm auf; beide Nachkommastellen gehören deshalb zum Messwert." data-feedback-wrong="Achte auf die kleinste Einheit der Waage: 0,01 g entspricht zwei Nachkommastellen.">
+          <h3>Kurze Entscheidung</h3><p>Eine Digitalwaage mit einer Auflösung von 0,01 g zeigt 12,45 g. Wie gibst du den Messwert an?</p>
+          <div class="choice-row"><button data-answer="rounded">12,5 g</button><button data-answer="balance">12,45 g</button><button data-answer="extra">12,450 g</button></div>
+          <div class="feedback" aria-live="polite"></div>
+        </div>
+
+        <aside class="note amber"><strong>Keine starre Mindestzahl:</strong> Eine Standardabweichung lässt sich auch bei kleinen Stichproben berechnen. Dann ist sie aber unsicher. Mehr unabhängige Messungen machen die Schätzung verlässlicher. Plane die Stichprobengrösse passend zur Forschungsfrage, erwarteten Streuung und verfügbaren Zeit.</aside>
+        <div class="project-prompt own-only"><strong>Übertrage es:</strong> Notiere Messgerät und kleinste Einheit. Welche zufälligen, systematischen oder groben Fehler sind möglich? Entsteht die Streuung zusätzlich durch natürliche biologische Vielfalt?</div>
         <div class="chapter-actions"><button class="complete-btn" data-complete="labor3">Labor 3 abschliessen</button><button class="secondary next" data-next="labor4">Weiter</button></div>
       </section>
 
@@ -392,6 +440,9 @@
             <label>Messungen<select id="projectRelation"><option value="independent">unabhängig</option><option value="paired">gepaart / dieselben Proben</option></select></label>
             <label>Verteilung<select id="projectDistribution"><option value="unknown">noch unbekannt</option><option value="normal">ungefähr normalverteilt</option><option value="non-normal">nicht normal / unsicher</option></select></label>
             <label>Stichprobengrösse pro Gruppe<input id="sampleSize" type="number" min="1" placeholder="z. B. 20"></label>
+            <label>Messgerät / Methode<input id="measurementMethod" type="text" placeholder="z. B. Digitalwaage"></label>
+            <label>Kleinste Einheit / Auflösung<input id="instrumentResolution" type="text" placeholder="z. B. 0,01 g"></label>
+            <label class="full">Kontrollen gegen Messfehler<textarea id="errorControls" rows="3" placeholder="z. B. Gerät tarieren, Blindprobe, feste Ableseregel, zufällige Reihenfolge"></textarea></label>
             <label class="full">Mögliche Fehler oder Grenzen<textarea id="limitations" rows="3" placeholder="z. B. unterschiedliche Haardicke, Messgerät, kleine Stichprobe"></textarea></label>
           </form>
           <details class="data-workbench">
