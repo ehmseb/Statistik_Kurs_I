@@ -269,7 +269,7 @@
         </div>
 
         <div class="shape-guide">
-          <article><b>Einseitig schief</b><p>Viele Werte liegen auf einer Seite, einige wenige ziehen sich wie ein langer „Schwanz“ nach links oder rechts. Mittelwert und Ausreisser reagieren darauf stärker.</p></article>
+          <article><b>Linksschief</b><p>Die meisten Werte liegen rechts bei den höheren Werten. Wenige kleine Werte bilden einen langen Ausläufer nach links. Bei einer rechtsschiefen Verteilung wäre es genau umgekehrt.</p></article>
           <article><b>Zweigipflig oder bimodal</b><p>Zwei Häufigkeitsgipfel können auf zwei unterschiedliche Teilgruppen oder Bedingungen hinweisen. Eine einzige Glockenkurve beschreibt die Daten dann schlecht. <b>Nicht verwechseln:</b> Binomial ist der Name einer Wahrscheinlichkeitsverteilung, zum Beispiel für die Trefferzahl bei mehreren Ja-Nein-Versuchen.</p></article>
         </div>
 
@@ -432,8 +432,17 @@
         </div>
 
         <div id="projectPlan" class="project-panel active" role="tabpanel">
+          <div class="variable-explainer">
+            <div class="section-heading"><span>Forschungsfrage planen</span><h3>Unabhängige und abhängige Variable</h3><p>Die beiden Variablen zeigen, was ihr verändert oder vergleicht und welches Ergebnis ihr anschliessend messt.</p></div>
+            <div class="variable-compare">
+              <article><span>Unabhängige Variable</span><h3>Was wird verändert oder verglichen?</h3><p>Zum Beispiel die Anzahl der Haarfärbungen: ungefärbt, einmal gefärbt und dreimal gefärbt.</p></article>
+              <article><span>Abhängige Variable</span><h3>Was wird als Ergebnis gemessen?</h3><p>Zum Beispiel die Reisskraft der Haare in Newton. Sie könnte von der Anzahl der Färbungen abhängen.</p></article>
+            </div>
+            <aside class="note blue"><strong>Nicht verwechseln:</strong> Eine <em>unabhängige Variable</em> ist der untersuchte Einflussfaktor. <em>Unabhängige Gruppen</em> bedeutet dagegen, dass die Messwerte der Gruppen nicht paarweise zusammengehören.</aside>
+          </div>
           <form id="researchForm" class="research-form">
             <label class="full">Unsere Forschungsfrage<textarea id="researchQuestion" rows="2" placeholder="Beispiel: Verändert mehrmaliges Färben die Reissfestigkeit von Haaren?"></textarea></label>
+            <label>Unabhängige Variable<input id="independentVariable" type="text" placeholder="z. B. Anzahl der Haarfärbungen"></label>
             <label>Abhängige Variable<input id="dependentVariable" type="text" placeholder="z. B. Reisskraft in N"></label>
             <label>Datenart<select id="projectScale"><option value="">Wählen …</option><option value="nominal">nominal</option><option value="ordinal">ordinal</option><option value="metric">metrisch</option></select></label>
             <label>Gruppen<select id="projectGroups"><option value="2">zwei</option><option value="3">mehr als zwei</option></select></label>

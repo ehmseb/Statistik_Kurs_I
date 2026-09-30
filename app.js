@@ -195,23 +195,24 @@ document.querySelectorAll("#precisionChoices button").forEach(button => button.a
 }));
 
 const distributions = [
-  { name: "A", bars: [1, 3, 6, 9, 6, 3, 1], answer: "normal" },
-  { name: "B", bars: [10, 8, 5, 3, 2, 1, 1], answer: "skewed" },
-  { name: "C", bars: [1, 4, 8, 4, 1, 4, 8], answer: "bimodal" }
+  { name: "A", bars: [1, 2, 4, 7, 9, 10, 9, 7, 4, 2, 1], answer: "normal" },
+  { name: "B", bars: [1, 1, 1, 1, 2, 3, 5, 8, 13, 18, 12], answer: "skewed" },
+  { name: "C", bars: [1, 3, 7, 9, 6, 2, 1, 3, 7, 9], answer: "bimodal" }
 ];
 let normalCorrect = new Set();
 const distributionCases = document.getElementById("distributionCases");
 distributions.forEach((item, index) => {
   const card = document.createElement("article");
   card.className = "distribution-card";
-  card.innerHTML = `<h3>Verteilung ${item.name}</h3><div class="histogram">${item.bars.map(height => `<i style="height:${height * 10}%"></i>`).join("")}</div><select aria-label="Verteilung ${item.name} beurteilen"><option value="">Beurteilen …</option><option value="normal">ungefähr glockenförmig</option><option value="skewed">einseitig schief</option><option value="bimodal">zweigipflig (bimodal)</option><option value="unclear">zu wenig Information</option></select>`;
+  const maxBar = Math.max(...item.bars);
+  card.innerHTML = `<h3>Verteilung ${item.name}</h3><div class="histogram">${item.bars.map(height => `<i style="height:${height / maxBar * 100}%"></i>`).join("")}</div><select aria-label="Verteilung ${item.name} beurteilen"><option value="">Beurteilen …</option><option value="normal">ungefähr glockenförmig</option><option value="skewed">linksschief</option><option value="bimodal">zweigipflig (bimodal)</option><option value="unclear">zu wenig Information</option></select>`;
   card.querySelector("select").addEventListener("change", event => {
     if (event.target.value === item.answer) normalCorrect.add(index); else normalCorrect.delete(index);
     document.getElementById("normalScore").textContent = `${normalCorrect.size} / ${distributions.length}`;
     const feedback = document.getElementById("normalFeedback");
     const correct = event.target.value === item.answer;
     feedback.className = `feedback visible ${correct ? "success" : "error"}`;
-    feedback.textContent = correct ? (item.answer === "normal" ? "Richtig: ungefähr symmetrisch mit einem Gipfel in der Mitte." : item.answer === "skewed" ? "Richtig: Die Häufigkeiten ziehen sich deutlich zu einer Seite." : "Richtig: Zwei getrennte Gipfel heissen zweigipflig oder bimodal und können zwei Teilgruppen anzeigen.") : "Achte auf Symmetrie, einen langen einseitigen Ausläufer und die Anzahl der Gipfel.";
+    feedback.textContent = correct ? (item.answer === "normal" ? "Richtig: ungefähr symmetrisch mit einem rund ansteigenden Gipfel in der Mitte." : item.answer === "skewed" ? "Richtig: Die meisten Werte liegen rechts; der lange Ausläufer zeigt nach links. Deshalb ist die Verteilung linksschief." : "Richtig: Zwei getrennte Gipfel heissen zweigipflig oder bimodal und können zwei Teilgruppen anzeigen.") : "Achte auf Symmetrie, die Richtung des langen Ausläufers und die Anzahl der Gipfel.";
   });
   distributionCases.appendChild(card);
 });
@@ -278,7 +279,7 @@ document.querySelectorAll("[data-project-tab]").forEach(button => button.addEven
   document.getElementById("exampleFinish").classList.toggle("active", button.dataset.projectTab === "example");
 }));
 
-const projectFields = ["researchQuestion", "dependentVariable", "projectScale", "projectGroups", "projectRelation", "projectDistribution", "sampleSize", "measurementMethod", "instrumentResolution", "errorControls", "limitations", "dataA", "dataB"];
+const projectFields = ["researchQuestion", "independentVariable", "dependentVariable", "projectScale", "projectGroups", "projectRelation", "projectDistribution", "sampleSize", "measurementMethod", "instrumentResolution", "errorControls", "limitations", "dataA", "dataB"];
 projectFields.forEach(id => {
   const field = document.getElementById(id);
   if (state.project[id] !== undefined) field.value = state.project[id];
@@ -321,6 +322,7 @@ function buildPlanText() {
   return [
     "STATISTISCHER AUSWERTUNGSPLAN",
     `Forschungsfrage: ${get("researchQuestion")}`,
+    `Unabhängige Variable: ${get("independentVariable")}`,
     `Abhängige Variable: ${get("dependentVariable")}`,
     `Datenart: ${get("projectScale")}`,
     `Gruppen: ${get("projectGroups")}`,
